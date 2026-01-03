@@ -66,8 +66,11 @@ function createServiceCard(svc) {
   return article;
 }
 
-function createProjectCard(project) {
-  // Matches the aesthetic in your screenshots: image + meta chips + title + description
+function createProjectCard(project, options = {}) {
+  // options.mode:
+  // - "featured": clicking goes to Projects page
+  // - "gallery": no click behavior (non-interactive)
+  const mode = options.mode || "default";
   const card = createEl("article", "project-card");
 
   const img = document.createElement("img");
@@ -108,8 +111,17 @@ function createProjectCard(project) {
     content.appendChild(p);
   }
 
-  // Optional click-through
-  if (project.link) {
+  // ✅ YOUR REQUIRED CLICK RULES
+  if (mode === "featured") {
+    card.style.cursor = "pointer";
+    card.addEventListener("click", () => {
+      window.location.href = "projects.html";
+    });
+  } else if (mode === "gallery") {
+    // ✅ Projects page: intentionally no click behavior
+    card.style.cursor = "default";
+  } else if (project.link) {
+    // Optional for other contexts
     card.style.cursor = "pointer";
     card.addEventListener("click", () => {
       window.location.href = project.link;
@@ -127,9 +139,8 @@ function applyGlobalSite(site) {
   setText("brandTagline", site.tagline);
   setText("brandNameFooter", site.brandName);
 
-  // Logo: if provided, show image and hide text mark.
+  // Logo: shows image if present
   const logoEl = byId("brandLogo");
-
   if (logoEl) {
     if (site.logo && typeof site.logo === "string" && site.logo.trim()) {
       logoEl.src = site.logo;
@@ -155,13 +166,11 @@ async function applyHomeContent() {
   if (home.ctaPrimaryLink) setHref("ctaPrimary", home.ctaPrimaryLink);
   if (home.ctaSecondaryLink) setHref("ctaSecondary", home.ctaSecondaryLink);
 
-  // Hero image (optional)
   if (home.heroImage) {
     setSrc("homeHeroImage", home.heroImage);
     if (home.heroImageAlt) setAlt("homeHeroImage", home.heroImageAlt);
   }
 
-  // Metrics
   const metrics = Array.isArray(home.metrics) ? home.metrics : [];
   const m = metrics.concat([{}, {}, {}]).slice(0, 3);
   setText("m1Value", m[0].value);
@@ -171,13 +180,15 @@ async function applyHomeContent() {
   setText("m3Value", m[2].value);
   setText("m3Label", m[2].label);
 
-  // Featured work (optional): use first 2 projects from projects.json
+  // ✅ Featured work uses first 2 projects; cards go to projects.html
   const featuredWrap = byId("featuredGrid");
   if (featuredWrap) {
     const projectsData = await loadJSON("/content/projects.json");
     if (projectsData && Array.isArray(projectsData.projects)) {
       clearChildren(featuredWrap);
-      projectsData.projects.slice(0, 2).forEach((p) => featuredWrap.appendChild(createProjectCard(p)));
+      projectsData.projects
+        .slice(0, 2)
+        .forEach((p) => featuredWrap.appendChild(createProjectCard(p, { mode: "featured" })));
     }
   }
 }
@@ -206,7 +217,8 @@ async function applyProjectsContent() {
   const gallery = byId("projectsGallery");
   if (gallery && Array.isArray(data.projects)) {
     clearChildren(gallery);
-    data.projects.forEach((p) => gallery.appendChild(createProjectCard(p)));
+    // ✅ Projects page cards do nothing
+    data.projects.forEach((p) => gallery.appendChild(createProjectCard(p, { mode: "gallery" })));
   }
 }
 
@@ -269,3 +281,4 @@ async function applyCMSContent() {
 }
 
 document.addEventListener("DOMContentLoaded", applyCMSContent);
+;
