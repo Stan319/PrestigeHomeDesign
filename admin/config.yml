@@ -1,0 +1,111 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "content"
+    label: "Website Content"
+    files:
+      - file: "content/site.json"
+        label: "Global Site Settings"
+        name: "site"
+        format: "json"
+        fields:
+          - { label: "Brand Name", name: "brandName", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload a logo (PNG/SVG). If blank, the PHD mark is shown." }
+          - { label: "Logo Alt Text", name: "logoAlt", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone (tel format)", name: "phone", widget: "string", hint: "Example: +1-310-555-0123" }
+          - { label: "Phone Display", name: "phoneDisplay", widget: "string", hint: "Example: (310) 555-0123" }
+          - { label: "Service Area", name: "serviceArea", widget: "string" }
+
+      - file: "content/home.json"
+        label: "Home Page"
+        name: "home"
+        format: "json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Lead", name: "lead", widget: "text" }
+          - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+          - { label: "Hero Image Alt Text", name: "heroImageAlt", widget: "string", required: false }
+          - { label: "Primary CTA Text", name: "ctaPrimaryText", widget: "string" }
+          - { label: "Primary CTA Link", name: "ctaPrimaryLink", widget: "string" }
+          - { label: "Secondary CTA Text", name: "ctaSecondaryText", widget: "string" }
+          - { label: "Secondary CTA Link", name: "ctaSecondaryLink", widget: "string" }
+          - label: "Metrics"
+            name: "metrics"
+            widget: "list"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+
+      - file: "content/services.json"
+        label: "Services Page"
+        name: "services"
+        format: "json"
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Lead", name: "lead", widget: "text" }
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Bullets"
+                name: "bullets"
+                widget: "list"
+                field: { label: "Bullet", name: "bullet", widget: "string" }
+
+      - file: "content/projects.json"
+        label: "Projects Page"
+        name: "projects"
+        format: "json"
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Lead", name: "lead", widget: "text" }
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - label: "Badges"
+                name: "badges"
+                widget: "list"
+                required: false
+                field: { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image Alt Text", name: "imageAlt", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+
+      - file: "content/about.json"
+        label: "About Page"
+        name: "about"
+        format: "json"
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Lead", name: "lead", widget: "text" }
+          - { label: "Body (paragraphs)", name: "body", widget: "list", field: { label: "Paragraph", name: "paragraph", widget: "text" } }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Image Alt Text", name: "imageAlt", widget: "string", required: false }
+
+      - file: "content/contact.json"
+        label: "Contact Page"
+        name: "contact"
+        format: "json"
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Lead", name: "lead", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone (tel format)", name: "phone", widget: "string" }
+          - { label: "Phone Display", name: "phoneDisplay", widget: "string" }

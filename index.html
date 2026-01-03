@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PrestigeHomeDesign delivers elevated remodels, additions, ADUs, and ground-up builds across Southern California." />
+  <title>PrestigeHomeDesign | Southern California Construction</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="cms-content.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PrestigeHomeDesign Home">
+        <img id="brandLogo" class="brand-logo" src="" alt="PrestigeHomeDesign logo" hidden />
+        <div>
+          <div class="brand-name" id="brandName">PrestigeHomeDesign</div>
+          <div class="brand-tag" id="brandTagline">Residential construction • Southern California</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div id="nav-links" class="nav-links" data-nav-links>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO (matches your screenshot 1) -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" id="homeEyebrow">Minimal. Elegant. Built to last.</div>
+          <h1 id="homeHeadline">Elevated remodels, additions, ADUs & ground-up builds.</h1>
+          <p class="lead" id="homeLead">
+            PrestigeHomeDesign delivers clean, modern craftsmanship across Southern California — kitchens, baths,
+            additions, and new construction with a calm, high-end finish.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-accent" id="ctaPrimary" href="projects.html">Explore projects</a>
+            <a class="btn btn-ghost" id="ctaSecondary" href="services.html">See services</a>
+          </div>
+
+          <div class="metrics" aria-label="Highlights">
+            <div class="metric">
+              <span class="metric-value" id="m1Value">Premium</span>
+              <span class="metric-label" id="m1Label">Craft + finish</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" id="m2Value">Clear</span>
+              <span class="metric-label" id="m2Label">Timeline + scope</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" id="m3Value">Local</span>
+              <span class="metric-label" id="m3Label">SoCal expertise</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-label="Modern Southern California home exterior">
+          <img id="homeHeroImage" src="assets/img/hero-home.jpg" alt="Modern coastal home exterior with glass balcony and warm wood accents" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK (matches your screenshot 2) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured work</h2>
+          <p>Realistic sample photography is used for this preview. Swap with your project photos anytime.</p>
+        </div>
+
+        <!-- Populated from content/projects.json (first 2 projects) -->
+        <div class="grid" id="featuredGrid" aria-label="Featured projects"></div>
+
+        <div class="actions" style="margin-top:22px;">
+          <a class="btn btn-accent" href="contact.html#form">Contact</a>
+          <a class="btn btn-ghost" href="projects.html">View more projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> <span id="footerBrand">PrestigeHomeDesign</span>. All rights reserved.</div>
+      <div>
+        <a href="projects.html">Projects</a> •
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

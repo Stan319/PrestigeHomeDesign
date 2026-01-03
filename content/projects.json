@@ -1,0 +1,46 @@
+{
+  "headline": "Featured work",
+  "lead": "Realistic sample photography is used for this preview. Swap with your project photos anytime.",
+  "projects": [
+    {
+      "title": "Bright kitchen refresh",
+      "category": "Remodel",
+      "location": "Los Angeles",
+      "badges": ["Kitchen"],
+      "description": "Clean cabinetry lines, warm stone tones, and improved lighting for a modern feel.",
+      "image": "/assets/img/project-kitchen.jpg",
+      "imageAlt": "Bright minimalist kitchen remodel with dining area",
+      "link": "contact.html"
+    },
+    {
+      "title": "Modern ground-up build",
+      "category": "New build",
+      "location": "Orange County",
+      "badges": ["Ground-up"],
+      "description": "Contemporary massing and expansive glazing for indoor–outdoor Southern California living.",
+      "image": "/assets/img/project-newbuild.jpg",
+      "imageAlt": "Modern luxury home exterior at dusk with warm interior lights",
+      "link": "contact.html"
+    },
+    {
+      "title": "Modern bath upgrade",
+      "category": "Remodel",
+      "location": "Orange County",
+      "badges": ["Bath"],
+      "description": "Improved lighting and a refined palette for a calm, spa-inspired finish.",
+      "image": "/assets/img/project-bathroom.jpg",
+      "imageAlt": "Modern bathroom remodel with patterned tile and warm wood vanity",
+      "link": "contact.html"
+    },
+    {
+      "title": "Backyard ADU concept",
+      "category": "ADU",
+      "location": "Southern California",
+      "badges": ["Backyard unit"],
+      "description": "A sample stand-in photo for the preview. Replace with your ADU portfolio photos.",
+      "image": "/assets/img/project-adu.jpg",
+      "imageAlt": "A-frame small home exterior used as ADU placeholder",
+      "link": "contact.html"
+    }
+  ]
+}

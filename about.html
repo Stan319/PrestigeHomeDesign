@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About PrestigeHomeDesign — Southern California remodels, additions, ground-up builds, and ADUs." />
+  <title>About | PrestigeHomeDesign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="cms-content.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PrestigeHomeDesign Home">
+        <img id="brandLogo" class="brand-logo" src="" alt="PrestigeHomeDesign logo" hidden />
+        <div>
+          <div class="brand-name" id="brandName">PrestigeHomeDesign</div>
+          <div class="brand-tag" id="brandTagline">Residential construction • Southern California</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+                <div id="nav-links" class="nav-links" data-nav-links>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <h1 class="about-title" id="aboutHeadline">Why PrestigeHomeDesign?</h1>
+            <p class="about-lead" id="aboutLead">
+              PrestigeHomeDesign is a Southern California builder focused on luxury remodels and modern residential construction.
+            </p>
+
+            <div class="about-body" id="aboutBody">
+              <p>We collaborate with discerning clients and leading architects who share our commitment to excellence, precision, and uncompromising quality.</p>
+              <p>We specialize in ground-up construction, comprehensive remodels, thoughtful additions, and innovative ADU solutions—finished with calm, high-end detail.</p>
+              <p>From concept to completion, we approach every project with professionalism and care—building lasting relationships across Southern California.</p>
+            </div>
+
+            <div class="actions" style="margin-top:22px;">
+              <a class="btn btn-accent" href="services.html">See services</a>
+              <a class="btn btn-ghost" href="contact.html#form">Contact</a>
+            </div>
+          </div>
+
+          <div class="about-media">
+            <img id="aboutImage" src="assets/img/hero-home.jpg" alt="Modern Southern California home exterior" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> PrestigeHomeDesign. All rights reserved.</div>
+      <div>
+        <a href="projects.html">View projects</a> •
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

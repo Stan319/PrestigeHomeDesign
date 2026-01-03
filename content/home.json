@@ -1,0 +1,16 @@
+{
+  "eyebrow": "MINIMAL. ELEGANT. BUILT TO LAST.",
+  "headline": "Elevated remodels, additions, ADUs & ground-up builds.",
+  "lead": "PrestigeHomeDesign delivers clean, modern craftsmanship across Southern California — kitchens, baths, additions, and new construction with a calm, high-end finish.",
+  "heroImage": "/assets/img/hero-home.jpg",
+  "heroImageAlt": "Modern coastal home exterior with glass balcony and warm wood accents",
+  "ctaPrimaryText": "Explore projects",
+  "ctaPrimaryLink": "projects.html",
+  "ctaSecondaryText": "See services",
+  "ctaSecondaryLink": "services.html",
+  "metrics": [
+    { "value": "Premium", "label": "Craft + finish" },
+    { "value": "Clear", "label": "Timeline + scope" },
+    { "value": "Local", "label": "SoCal expertise" }
+  ]
+}

@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PrestigeHomeDesign — Southern California remodeling, additions, new construction, and ADUs." />
+  <title>Services | PrestigeHomeDesign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="cms-content.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-page="services">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PrestigeHomeDesign Home">
+        <img id="brandLogo" class="brand-logo" src="" alt="PrestigeHomeDesign logo" hidden />
+        <div>
+          <div class="brand-name" id="brandName">PrestigeHomeDesign</div>
+          <div class="brand-tag" id="brandTagline">Residential construction • Southern California</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+                <div id="nav-links" class="nav-links" data-nav-links>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+        <section class="services-slab">
+      <div class="container">
+        <div class="services-head">
+          <h1 class="services-title" id="servicesHeadline">Our Services</h1>
+          <p class="services-lead" id="servicesLead">
+            Thoughtful remodels, seamless additions, ground-up builds, and ADUs—crafted for Southern California living.
+          </p>
+        </div>
+
+        <div class="services-grid" id="servicesCards">
+          <!-- Cards populated by CMS (content/services.json). Fallback content below. -->
+          <div class="service-card">
+            <h3>Custom Remodels</h3>
+            <p>Kitchen and bath renovations to complete home transformations—clean lines, premium finishes.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Home Additions</h3>
+            <p>Expand your space seamlessly with additions that complement your home’s architecture and flow.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Ground-Up Builds</h3>
+            <p>From site planning to final details—professional project management and precise execution.</p>
+          </div>
+
+          <div class="service-card service-card-wide">
+            <h3>ADU Construction</h3>
+            <p>Detached or attached ADUs and garage conversions designed to be efficient, compliant, and beautifully finished.</p>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:24px; justify-content:center;">
+          <a class="btn btn-accent" href="projects.html">View projects</a>
+          <a class="btn btn-ghost" href="contact.html#form">Contact</a>
+        </div>
+      </div>
+    </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> PrestigeHomeDesign. All rights reserved.</div>
+      <div>
+        <a href="projects.html">View projects</a> •
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

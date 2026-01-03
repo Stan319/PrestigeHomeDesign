@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact PrestigeHomeDesign for remodels, additions, ADUs, and ground-up builds in Southern California." />
+  <title>Contact | PrestigeHomeDesign</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="cms-content.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PrestigeHomeDesign Home">
+        <img id="brandLogo" class="brand-logo" src="" alt="PrestigeHomeDesign logo" hidden />
+        <div>
+          <div class="brand-name" id="brandName">PrestigeHomeDesign</div>
+          <div class="brand-tag" id="brandTagline">Residential construction • Southern California</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div id="nav-links" class="nav-links" data-nav-links>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1 class="page-title" id="contactHeadline">Contact</h1>
+          <p id="contactLead">Tell us about your project. For this preview, the form opens your email client (no backend required).</p>
+        </div>
+
+        <div class="contact-cards" aria-label="Contact details">
+          <a class="contact-card" id="contactEmailLink" href="mailto:hello@prestigehomedesign.com">
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-value" id="contactEmailText">hello@prestigehomedesign.com</div>
+          </a>
+          <a class="contact-card" id="contactPhoneLink" href="tel:+1-000-000-0000">
+            <div class="contact-card-label">Phone</div>
+            <div class="contact-card-value" id="contactPhoneText">(000) 000-0000</div>
+          </a>
+        </div>
+
+        <div class="form" id="form" style="margin-top:18px;">
+          <form data-contact-form>
+            <div class="inline">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="inline">
+              <div class="field">
+                <label for="city">City</label>
+                <input id="city" name="city" type="text" placeholder="Los Angeles, Orange County, etc." />
+              </div>
+              <div class="field">
+                <label for="type">Project type</label>
+                <select id="type" name="type" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Remodel</option>
+                  <option>Addition</option>
+                  <option>New construction (ground-up)</option>
+                  <option>ADU</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" required placeholder="Rough scope, desired start date, budget range, and any helpful details."></textarea>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button class="btn btn-accent" type="submit">Send inquiry</button>
+              <a class="btn btn-ghost" href="projects.html">See sample projects</a>
+            </div>
+          </form>
+        </div>
+
+        
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> <span id="brandNameFooter">PrestigeHomeDesign</span>. All rights reserved.</div>
+      <div>
+        <a href="projects.html">Projects</a> •
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

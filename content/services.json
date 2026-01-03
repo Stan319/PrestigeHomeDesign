@@ -1,0 +1,42 @@
+{
+  "headline": "Services",
+  "lead": "Remodels, additions, new construction, and ADUs for Southern California homeowners.",
+  "services": [
+    {
+      "title": "Remodels",
+      "description": "Kitchens, bathrooms, and full-home remodels with elevated materials and tidy execution.",
+      "bullets": [
+        "Design-forward upgrades",
+        "High-quality finishes",
+        "Permit support"
+      ]
+    },
+    {
+      "title": "Additions",
+      "description": "Expand your living space without compromising the original architecture.",
+      "bullets": [
+        "Primary suites",
+        "Living room extensions",
+        "Second-story additions"
+      ]
+    },
+    {
+      "title": "New Construction",
+      "description": "Ground-up builds guided from planning to punch list\u2014built with precision and care.",
+      "bullets": [
+        "Custom home builds",
+        "Structural framing",
+        "Project management"
+      ]
+    },
+    {
+      "title": "ADUs",
+      "description": "Accessory Dwelling Units designed to be efficient, compliant, and beautifully finished.",
+      "bullets": [
+        "Detached / attached ADUs",
+        "Garage conversions",
+        "SoCal code experience"
+      ]
+    }
+  ]
+}

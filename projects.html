@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projects by PrestigeHomeDesign — remodels, additions, ADUs, and ground-up builds across Southern California." />
+  <title>Projects | PrestigeHomeDesign</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script defer src="cms-content.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PrestigeHomeDesign Home">
+        <img id="brandLogo" class="brand-logo" src="" alt="PrestigeHomeDesign logo" hidden />
+        <div>
+          <div class="brand-name" id="brandName">PrestigeHomeDesign</div>
+          <div class="brand-tag" id="brandTagline">Residential construction • Southern California</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div id="nav-links" class="nav-links" data-nav-links>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1 class="page-title" id="projectsHeadline">Projects</h1>
+          <p id="projectsLead">A few examples of recent work. Replace placeholders with your portfolio.</p>
+        </div>
+
+        <div class="grid" id="projectsGallery" aria-label="Project gallery">
+          <!-- populated from /content/projects.json -->
+        </div>
+
+        <div style="margin-top:22px;">
+          <a class="btn btn-accent" href="contact.html#form">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> <span id="brandNameFooter">PrestigeHomeDesign</span>. All rights reserved.</div>
+      <div>
+        <a href="projects.html">Projects</a> •
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
