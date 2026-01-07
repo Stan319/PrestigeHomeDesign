@@ -1,6 +1,5 @@
 # PrestigeHomeDesign (Client Preview)
 
-Light-theme, minimal multi-page website preview inspired by the clean elegance of Corbin Reeves Construction and Patterson Custom Homes.
 
 ## Pages
 - `index.html` — Home / hero + featured work
@@ -23,19 +22,6 @@ Then visit `http://localhost:5173`.
 2. Drag-and-drop the entire folder contents (or the zip) into the drop zone.
 3. Netlify will instantly give you a public URL you can send to the client.
 
-## Replace the placeholder photos
-All images are in `assets/img/`. Swap them with real project images using the same filenames:
-- `hero-home.jpg`
-- `project-kitchen.jpg`
-- `project-bathroom.jpg`
-- `project-newbuild.jpg`
-- `project-adu.jpg`
-
-## Change the contact email
-In `script.js`, update:
-```js
-const to = "hello@prestigehomedesign.com";
-```
 
 ## Notes
 - Placeholder photos are from Unsplash and are free to use under the Unsplash License.
