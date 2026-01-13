@@ -3,8 +3,8 @@
 ## Pages
 - `index.html` — Home / hero + featured work
 - `services.html` — Services overview
-- `projects.html` — Project gallery (realistic placeholder images)
-- `contact.html` — Contact form (mailto-based for preview)
+- `projects.html` — Project gallery 
+- `contact.html` — Contact form 
 
 ## Notes
 - Placeholder photos are from Unsplash and are free to use under the Unsplash License.
