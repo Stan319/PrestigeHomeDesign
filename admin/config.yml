@@ -70,7 +70,7 @@ collections:
         format: "json"
         fields:
           - { label: "Headline", name: "headline", widget: "string" }
-          - { label: "Lead", name: "lead", widget: "text" }
+          - { label: "Lead", name: "lead", widget: "text", required: false, default: "" }
 
           # ✅ NEW: Currently Working On (Admin-editable)
           - label: "Currently Working On"

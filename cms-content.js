@@ -262,9 +262,21 @@ async function applyProjectsContent() {
   if (!data) return;
 
   setText("projectsHeadline", data.headline);
-  if (data.lead && data.lead.trim()) {
-    setText("projectsLead", data.lead);
+
+  // Hide lead if empty/whitespace
+  const leadEl = byId("projectsLead");
+  const leadText = typeof data.lead === "string" ? data.lead : "";
+  
+  if (leadEl) {
+    if (!leadText.trim()) {
+      leadEl.textContent = "";
+      leadEl.style.display = "none";
+    } else {
+      leadEl.style.display = "";
+      leadEl.textContent = leadText;
+    }
   }
+  
   
 
   const gallery = byId("projectsGallery");
