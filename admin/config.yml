@@ -32,7 +32,7 @@ collections:
         fields:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Headline", name: "headline", widget: "string" }
-          - { label: "Lead", name: "lead", widget: "text" }
+          - { label: "Lead", name: "lead", widget: "text", required: false }
           - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
           - { label: "Hero Image Alt Text", name: "heroImageAlt", widget: "string", required: false }
           - { label: "Primary CTA Text", name: "ctaPrimaryText", widget: "string" }
