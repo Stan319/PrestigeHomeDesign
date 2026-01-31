@@ -262,7 +262,10 @@ async function applyProjectsContent() {
   if (!data) return;
 
   setText("projectsHeadline", data.headline);
-  setText("projectsLead", data.lead);
+  if (data.lead && data.lead.trim()) {
+    setText("projectsLead", data.lead);
+  }
+  
 
   const gallery = byId("projectsGallery");
   if (gallery && Array.isArray(data.projects)) {
