@@ -1,6 +1,6 @@
 {
   "headline": "Featured work",
-  "lead": "",
+  "lead": "Test",
   "currentWork": {
     "title": "Currently Working On",
     "subtitle": "Accessory Dwelling Unit (ADU) — currently in construction with framing completed and exterior weather protection installed.",
@@ -24,7 +24,9 @@
       "title": "Bright kitchen refresh",
       "category": "Remodel",
       "location": "Los Angeles",
-      "badges": ["Kitchen"],
+      "badges": [
+        "Kitchen"
+      ],
       "description": "Clean cabinetry lines, warm stone tones, and improved lighting for a modern feel.",
       "image": "/assets/img/project-kitchen.jpg",
       "imageAlt": "Bright minimalist kitchen remodel with dining area",
@@ -34,7 +36,9 @@
       "title": "Modern ground-up build",
       "category": "New build",
       "location": "Orange County",
-      "badges": ["Ground-up"],
+      "badges": [
+        "Ground-up"
+      ],
       "description": "Contemporary massing and expansive glazing for indoor–outdoor Southern California living.",
       "image": "/assets/img/project-newbuild.jpg",
       "imageAlt": "Modern luxury home exterior at dusk with warm interior lights",
@@ -44,7 +48,9 @@
       "title": "Modern bath upgrade",
       "category": "Remodel",
       "location": "Orange County",
-      "badges": ["Bath"],
+      "badges": [
+        "Bath"
+      ],
       "description": "Improved lighting and a refined palette for a calm, spa-inspired finish.",
       "image": "/assets/img/project-bathroom.jpg",
       "imageAlt": "Modern bathroom remodel with patterned tile and warm wood vanity",
@@ -52,4 +58,3 @@
     }
   ]
 }
-
