@@ -132,6 +132,56 @@ function createProjectCard(project, options = {}) {
   return card;
 }
 
+/* ✅ NEW: Render "Currently Working On" from projects.json */
+function renderCurrentWork(currentWork) {
+  const section = byId("currentWorkSection");
+  const titleEl = byId("currentWorkTitle");
+  const subtitleEl = byId("currentWorkSubtitle");
+  const gallery = byId("currentWorkGallery");
+
+  // If placeholders aren't on the page, silently do nothing
+  if (!section || !titleEl || !subtitleEl || !gallery) return;
+
+  if (!currentWork || !Array.isArray(currentWork.items) || currentWork.items.length === 0) {
+    section.hidden = true;
+    return;
+  }
+
+  titleEl.textContent = currentWork.title || "Currently Working On";
+  subtitleEl.textContent = currentWork.subtitle || "";
+  clearChildren(gallery);
+
+  currentWork.items.forEach((item) => {
+    const card = createEl("article", "project-card");
+
+    const img = document.createElement("img");
+    img.src = item.image || "";
+    img.alt = item.alt || item.title || "Current work photo";
+    card.appendChild(img);
+
+    const content = createEl("div", "content");
+
+    const h3 = document.createElement("h3");
+    h3.textContent = item.title || "Update";
+    content.appendChild(h3);
+
+    if (item.caption) {
+      const p = document.createElement("p");
+      p.textContent = item.caption;
+      content.appendChild(p);
+    }
+
+    card.appendChild(content);
+
+    // No click behavior for this section (matches your projects page rule)
+    card.style.cursor = "default";
+
+    gallery.appendChild(card);
+  });
+
+  section.hidden = false;
+}
+
 function applyGlobalSite(site) {
   if (!site) return;
 
@@ -220,6 +270,9 @@ async function applyProjectsContent() {
     // ✅ Projects page cards do nothing
     data.projects.forEach((p) => gallery.appendChild(createProjectCard(p, { mode: "gallery" })));
   }
+
+  // ✅ NEW: CMS-driven "Currently Working On"
+  renderCurrentWork(data.currentWork);
 }
 
 async function applyAboutContent() {
