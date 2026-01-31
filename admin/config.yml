@@ -71,6 +71,26 @@ collections:
         fields:
           - { label: "Headline", name: "headline", widget: "string" }
           - { label: "Lead", name: "lead", widget: "text" }
+
+          # ✅ NEW: Currently Working On (Admin-editable)
+          - label: "Currently Working On"
+            name: "currentWork"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Title", name: "title", widget: "string", default: "Currently Working On" }
+              - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+              - label: "Cards (2 images)"
+                name: "items"
+                widget: "list"
+                min: 2
+                max: 2
+                fields:
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: false }
+                  - { label: "Caption", name: "caption", widget: "string", required: false }
+
           - label: "Projects"
             name: "projects"
             widget: "list"

@@ -15,6 +15,7 @@
   <script defer src="cms-content.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
+
 <body data-page="projects">
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -47,12 +48,25 @@
       <div class="container">
         <div class="section-head">
           <h1 class="page-title" id="projectsHeadline">Projects</h1>
-          <p id="projectsLead">A few examples of recent work. Replace placeholders with your portfolio.</p>
+          <p id="projectsLead">A few examples of recent work.</p>
         </div>
 
-        <div class="grid" id="projectsGallery" aria-label="Project gallery">
+        <!-- CMS Project Gallery -->
+        <div class="grid triangle-grid" id="projectsGallery" aria-label="Project gallery">
           <!-- populated from /content/projects.json -->
         </div>
+
+        <!-- Currently Working On (CMS-driven) -->
+        <section class="project-feature" aria-labelledby="currentWorkTitle" id="currentWorkSection" hidden>
+          <div class="project-feature-head">
+            <h2 id="currentWorkTitle" class="section-title"></h2>
+            <p class="muted" id="currentWorkSubtitle"></p>
+          </div>
+
+          <!-- Card-style layout (matches project gallery) -->
+          <div class="grid" id="currentWorkGallery" aria-label="Currently working on gallery"></div>
+        </section>
+        <!-- End Currently Working On -->
 
         <div style="margin-top:22px;">
           <a class="btn btn-accent" href="contact.html#form">Contact</a>
@@ -63,7 +77,11 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© <span id="year"></span> <span id="brandNameFooter">PrestigeHomeDesign</span>. All rights reserved.</div>
+      <div>
+        © <span id="year"></span>
+        <span id="brandNameFooter">PrestigeHomeDesign</span>.
+        All rights reserved.
+      </div>
       <div>
         <a href="projects.html">Projects</a> •
         <a href="contact.html">Contact</a>
