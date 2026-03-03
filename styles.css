@@ -572,5 +572,44 @@ body[data-page="projects"] #projectsGallery > .project-card:nth-child(3) {
   }
 }
 
+/* ===============================
+   Currently Working On Section
+================================= */
+
+.project-feature {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.current-work-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Elegant underline accent */
+.current-work-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #1e3a8a; /* or your accent color */
+  margin-top: 12px;
+}
+
+#currentWorkSubtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: 6px;
+}
 
 
