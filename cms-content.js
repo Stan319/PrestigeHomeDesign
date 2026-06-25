@@ -71,6 +71,8 @@ function createProjectCard(project, options = {}) {
   const card = createEl("article", "project-card");
 
   const img = document.createElement("img");
+  img.loading = "lazy";
+  img.decoding = "async";
   img.src = project.image || project.images?.[0] || "";
   img.alt = project.imageAlt || project.title || "Project photo";
   card.appendChild(img);
@@ -141,6 +143,8 @@ function createProjectShowcase(project) {
   const media = createEl("div", "project-carousel");
 
   const img = document.createElement("img");
+  img.loading = "lazy";
+  img.decoding = "async";
   img.src = images[0] || "";
   img.alt = project.imageAlt || project.title || "Project photo";
   media.appendChild(img);
@@ -270,6 +274,8 @@ function renderCurrentWork(currentWork) {
     const card = createEl("article", "project-card");
 
     const img = document.createElement("img");
+    img.loading = "lazy";
+    img.decoding = "async";
     img.src = item.image || "";
     img.alt = item.alt || item.title || "Current work photo";
     card.appendChild(img);
