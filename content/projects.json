@@ -1,60 +1,96 @@
 {
-  "headline": "Featured work",
-  "lead": "",
-  "currentWork": {
-    "title": "Currently Working On",
-    "subtitle": "Accessory Dwelling Unit (ADU) — currently in construction with framing completed and exterior weather protection installed.",
-    "items": [
-      {
-        "title": "ADU Exterior",
-        "image": "/assets/img/IMG_6628.jpeg",
-        "alt": "ADU exterior in progress with weather-resistant barrier and installed window",
-        "caption": "Weather-resistant barrier installed and openings set."
-      },
-      {
-        "title": "ADU Interior",
-        "image": "/assets/img/IMG_6633.jpeg",
-        "alt": "ADU interior framing and construction progress",
-        "caption": "Active construction with framing and material staging."
-      }
-    ]
-  },
+  "headline": "Featured Work",
+  "lead": "Luxury custom homes and high-end remodels throughout Southern California.",
+
   "projects": [
     {
-      "title": "Bright kitchen refresh",
-      "category": "Remodel",
-      "location": "Los Angeles",
-      "badges": [
-        "Kitchen"
+      "title": "Dana Point",
+      "style": "Coastal Contemporary",
+      "location": "Exclusive Gated Community in Monarch Bay",
+
+      "description": "A complete coastal contemporary transformation in the heart of Dana Point, reimagining an existing residence with clean architectural lines, open concept living spaces, natural textures, and seamless indoor-outdoor connections that reflect Southern California's relaxed coastal lifestyle.",
+
+      "images": [
+        "/assets/img/projects/dana-point/photo-1.jpg",
+        "/assets/img/projects/dana-point/photo-2.jpg",
+        "/assets/img/projects/dana-point/photo-3.jpg"
       ],
-      "description": "Clean cabinetry lines, warm stone tones, and improved lighting for a modern feel.",
-      "image": "/assets/img/project-kitchen.jpg",
-      "imageAlt": "Bright minimalist kitchen remodel with dining area",
-      "link": "contact.html"
+
+      "imageAlt": "Dana Point Coastal Contemporary Residence",
+
+      "details": [
+        "3,731 sqft House",
+        "701 sqft Garage",
+        "3 Bedrooms",
+        "4.5 Bathrooms",
+        "Office",
+        "Flex Room",
+        "2-Car Garage",
+        "Golf Cart Parking"
+      ],
+
+      "team": [
+        "Architect — Jason Richart",
+        "Landscape Designer — David Pederson"
+      ]
     },
+
     {
-      "title": "Modern ground-up build",
-      "category": "New build",
-      "location": "Orange County",
-      "badges": [
-        "Ground-up"
+      "title": "Newport Coast",
+      "style": "Sophisticated Transitional",
+      "location": "Newport Coast",
+
+      "description": "An exquisitely remodeled gem in the highly regarded Newport Coast community.",
+
+      "images": [
+        "/assets/img/projects/newport-coast-sophisticated/photo-1.jpg",
+        "/assets/img/projects/newport-coast-sophisticated/photo-2.jpg",
+        "/assets/img/projects/newport-coast-sophisticated/photo-3.jpg"
       ],
-      "description": "Contemporary massing and expansive glazing for indoor–outdoor Southern California living.",
-      "image": "/assets/img/project-newbuild.jpg",
-      "imageAlt": "Modern luxury home exterior at dusk with warm interior lights",
-      "link": "contact.html"
+
+      "imageAlt": "Sophisticated Transitional Residence in Newport Coast",
+
+      "details": [
+        "4,016 sqft House",
+        "600 sqft Garage",
+        "4 Bedrooms",
+        "5 Bathrooms",
+        "Office"
+      ],
+
+      "team": [
+        "Architect — Mitral Nehorai",
+        "Landscape Designer — Tim Fiskin",
+        "Designer — Donna Johnson"
+      ]
     },
+
     {
-      "title": "Modern bath upgrade",
-      "category": "Remodel",
-      "location": "Orange County",
-      "badges": [
-        "Bath"
+      "title": "Newport Coast",
+      "style": "Transitional",
+      "location": "Newport Coast, California",
+
+      "description": "A luxury transitional residence in Newport Coast that harmonizes timeless coastal elegance with modern sophistication. It features expansive glazing and seamless indoor-outdoor living spaces designed to complement exquisite views.",
+
+      "images": [
+        "/assets/img/projects/newport-coast-transitional/photo-1.jpg",
+        "/assets/img/projects/newport-coast-transitional/photo-2.jpg",
+        "/assets/img/projects/newport-coast-transitional/photo-3.jpg"
       ],
-      "description": "Improved lighting and a refined palette for a calm, spa-inspired finish.",
-      "image": "/assets/img/project-bathroom.jpg",
-      "imageAlt": "Modern bathroom remodel with patterned tile and warm wood vanity",
-      "link": "contact.html"
+
+      "imageAlt": "Luxury Transitional Home in Newport Coast",
+
+      "details": [
+        "Open Floor Plan",
+        "Seamless Indoor–Outdoor Living",
+        "Integrated Interior & Exterior Living Spaces"
+      ],
+
+      "team": [
+        "Architect — Jason Richart",
+        "Landscape Designer — Tim Fiskin",
+        "Interior & Hardscape Design — Prestige Home Design"
+      ]
     }
   ]
 }

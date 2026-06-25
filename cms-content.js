@@ -67,14 +67,11 @@ function createServiceCard(svc) {
 }
 
 function createProjectCard(project, options = {}) {
-  // options.mode:
-  // - "featured": clicking goes to Projects page
-  // - "gallery": no click behavior (non-interactive)
   const mode = options.mode || "default";
   const card = createEl("article", "project-card");
 
   const img = document.createElement("img");
-  img.src = project.image || "";
+  img.src = project.image || project.images?.[0] || "";
   img.alt = project.imageAlt || project.title || "Project photo";
   card.appendChild(img);
 
@@ -83,7 +80,7 @@ function createProjectCard(project, options = {}) {
   const meta = createEl("div", "meta");
 
   const kicker = createEl("span", "kicker");
-  kicker.textContent = project.category || "Project";
+  kicker.textContent = project.category || project.style || "Project";
   meta.appendChild(kicker);
 
   const badges = Array.isArray(project.badges) ? project.badges : [];
@@ -111,17 +108,14 @@ function createProjectCard(project, options = {}) {
     content.appendChild(p);
   }
 
-  // ✅ YOUR REQUIRED CLICK RULES
   if (mode === "featured") {
     card.style.cursor = "pointer";
     card.addEventListener("click", () => {
       window.location.href = "projects.html";
     });
   } else if (mode === "gallery") {
-    // ✅ Projects page: intentionally no click behavior
     card.style.cursor = "default";
   } else if (project.link) {
-    // Optional for other contexts
     card.style.cursor = "pointer";
     card.addEventListener("click", () => {
       window.location.href = project.link;
@@ -132,14 +126,135 @@ function createProjectCard(project, options = {}) {
   return card;
 }
 
-/* ✅ NEW: Render "Currently Working On" from projects.json */
+function createProjectShowcase(project) {
+  const section = createEl("article", "project-showcase");
+
+  const images =
+    Array.isArray(project.images) && project.images.length
+      ? project.images
+      : project.image
+        ? [project.image]
+        : [];
+
+  let currentIndex = 0;
+
+  const media = createEl("div", "project-carousel");
+
+  const img = document.createElement("img");
+  img.src = images[0] || "";
+  img.alt = project.imageAlt || project.title || "Project photo";
+  media.appendChild(img);
+
+  const prevBtn = createEl("button", "carousel-btn carousel-prev");
+  prevBtn.type = "button";
+  prevBtn.textContent = "‹";
+  prevBtn.setAttribute("aria-label", "Previous project photo");
+
+  const nextBtn = createEl("button", "carousel-btn carousel-next");
+  nextBtn.type = "button";
+  nextBtn.textContent = "›";
+  nextBtn.setAttribute("aria-label", "Next project photo");
+
+  const dots = createEl("div", "carousel-dots");
+
+  function updateImage() {
+    img.src = images[currentIndex] || "";
+    dots.querySelectorAll("button").forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === currentIndex);
+    });
+  }
+
+  images.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `View project photo ${index + 1}`);
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateImage();
+    });
+    dots.appendChild(dot);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  });
+
+  if (images.length > 1) {
+    media.appendChild(prevBtn);
+    media.appendChild(nextBtn);
+    media.appendChild(dots);
+  }
+
+  updateImage();
+
+  const content = createEl("div", "project-showcase-content");
+
+  const kicker = createEl("div", "kicker");
+  kicker.textContent = project.location || project.category || "Featured Project";
+  content.appendChild(kicker);
+
+  const title = document.createElement("h2");
+  title.textContent = project.title || "Project";
+  content.appendChild(title);
+
+  if (project.style) {
+    const style = createEl("h3", "project-style");
+    style.textContent = project.style;
+    content.appendChild(style);
+  }
+
+  if (project.description) {
+    const desc = document.createElement("p");
+    desc.textContent = project.description;
+    content.appendChild(desc);
+  }
+
+  if (Array.isArray(project.details) && project.details.length) {
+    const details = createEl("div", "project-details");
+
+    project.details.forEach((detail) => {
+      const item = createEl("span", "project-detail");
+      item.textContent = String(detail);
+      details.appendChild(item);
+    });
+
+    content.appendChild(details);
+  }
+
+  if (Array.isArray(project.team) && project.team.length) {
+    const team = createEl("div", "project-team");
+
+    const teamTitle = document.createElement("strong");
+    teamTitle.textContent = "Design Team";
+    team.appendChild(teamTitle);
+
+    project.team.forEach((member) => {
+      const p = document.createElement("p");
+      p.textContent = String(member);
+      team.appendChild(p);
+    });
+
+    content.appendChild(team);
+  }
+
+  section.appendChild(media);
+  section.appendChild(content);
+
+  return section;
+}
+
 function renderCurrentWork(currentWork) {
   const section = byId("currentWorkSection");
   const titleEl = byId("currentWorkTitle");
   const subtitleEl = byId("currentWorkSubtitle");
   const gallery = byId("currentWorkGallery");
 
-  // If placeholders aren't on the page, silently do nothing
   if (!section || !titleEl || !subtitleEl || !gallery) return;
 
   if (!currentWork || !Array.isArray(currentWork.items) || currentWork.items.length === 0) {
@@ -172,10 +287,7 @@ function renderCurrentWork(currentWork) {
     }
 
     card.appendChild(content);
-
-    // No click behavior for this section (matches your projects page rule)
     card.style.cursor = "default";
-
     gallery.appendChild(card);
   });
 
@@ -189,7 +301,6 @@ function applyGlobalSite(site) {
   setText("brandTagline", site.tagline);
   setText("brandNameFooter", site.brandName);
 
-  // Logo: shows image if present
   const logoEl = byId("brandLogo");
   if (logoEl) {
     if (site.logo && typeof site.logo === "string" && site.logo.trim()) {
@@ -230,7 +341,6 @@ async function applyHomeContent() {
   setText("m3Value", m[2].value);
   setText("m3Label", m[2].label);
 
-  // ✅ Featured work uses first 2 projects; cards go to projects.html
   const featuredWrap = byId("featuredGrid");
   if (featuredWrap) {
     const projectsData = await loadJSON("/content/projects.json");
@@ -263,10 +373,9 @@ async function applyProjectsContent() {
 
   setText("projectsHeadline", data.headline);
 
-  // Hide lead if empty/whitespace
   const leadEl = byId("projectsLead");
   const leadText = typeof data.lead === "string" ? data.lead : "";
-  
+
   if (leadEl) {
     if (!leadText.trim()) {
       leadEl.textContent = "";
@@ -276,18 +385,20 @@ async function applyProjectsContent() {
       leadEl.textContent = leadText;
     }
   }
-  
-  
 
   const gallery = byId("projectsGallery");
   if (gallery && Array.isArray(data.projects)) {
     clearChildren(gallery);
-    // ✅ Projects page cards do nothing
-    data.projects.forEach((p) => gallery.appendChild(createProjectCard(p, { mode: "gallery" })));
+
+    gallery.classList.remove("grid", "triangle-grid");
+    gallery.classList.add("project-showcase-list");
+
+    data.projects.forEach((p) => {
+      gallery.appendChild(createProjectShowcase(p));
+    });
   }
 
-  // ✅ NEW: CMS-driven "Currently Working On"
-  renderCurrentWork(data.currentWork);
+  // renderCurrentWork(data.currentWork);
 }
 
 async function applyAboutContent() {
@@ -323,6 +434,7 @@ async function applyContactContent(site) {
   if (merged.email) {
     const emailText = byId("contactEmailText");
     if (emailText) emailText.textContent = merged.email;
+
     const emailLink = byId("contactEmailLink");
     if (emailLink) emailLink.setAttribute("href", `mailto:${merged.email}`);
   }
@@ -330,6 +442,7 @@ async function applyContactContent(site) {
   if (merged.phone) {
     const phoneText = byId("contactPhoneText");
     if (phoneText) phoneText.textContent = merged.phoneDisplay || merged.phone;
+
     const phoneLink = byId("contactPhoneLink");
     if (phoneLink) phoneLink.setAttribute("href", `tel:${merged.phone}`);
   }
@@ -349,4 +462,3 @@ async function applyCMSContent() {
 }
 
 document.addEventListener("DOMContentLoaded", applyCMSContent);
-;
