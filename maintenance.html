@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prestige Home Design | Website Update</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Inter", sans-serif;
+      color: #fff;
+      background:
+        linear-gradient(rgba(15, 15, 15, 0.65), rgba(15, 15, 15, 0.65)),
+        url("assets/img/hero-home.jpg") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .maintenance {
+      max-width: 760px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .brand {
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.8;
+      color: #f1f1f1;
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      margin-top: 32px;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="maintenance">
+    <div class="brand">Prestige Home Design</div>
+
+    <h1>Our Website Is Being Updated</h1>
+
+    <p>
+      We are currently refreshing our website to better showcase our latest
+      luxury residential projects across Southern California.
+    </p>
+
+    <p>
+      Please check back soon.
+    </p>
+
+    <div class="contact">
+      For inquiries, contact us at
+      <a href="mailto:info@prestigehomedesign.com">info@prestigehomedesign.com</a>
+    </div>
+  </main>
+</body>
+</html>
